@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
 import "./index.css";
 import { Button, Card } from "antd";
-import debounce from "lodash/debounce";
 
 import TooltipPopover from "./TooltipPopover";
 import Image from "./Image";
@@ -22,16 +21,6 @@ const App = () => {
     });
   };
 
-  const updateCoords = debounce(
-    () => isOn && updateTooltipCoords(btnRef.current.buttonNode),
-    100
-  );
-
-  useEffect(() => {
-    window.addEventListener("resize", updateCoords);
-    return () => window.removeEventListener("resize", updateCoords);
-  }, [isOn]);
-
   return (
     <Card style={{ ...styles.card, overflow: "hidden" }}>
       <Image />
@@ -47,7 +36,12 @@ const App = () => {
       </Button>
       {isOn && (
         <Portal>
-          <TooltipPopover coords={coords}>
+          <TooltipPopover
+            coords={coords}
+            updateTooltipCoords={() =>
+              updateTooltipCoords(btnRef.current.buttonNode)
+            }
+          >
             <div>
               Awesome content that is never cut off by its parent container!
             </div>
