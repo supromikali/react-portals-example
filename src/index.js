@@ -16,6 +16,7 @@ const App = () => {
     <Card style={{ ...styles.card, overflow: "hidden" }}>
       <Image />
       <Button
+        style={styles.button}
         onClick={e => {
           const rect = e.target.getBoundingClientRect();
           setCoords({
@@ -41,7 +42,8 @@ const App = () => {
 };
 
 const styles = {
-  card: { padding: 50 }
+  card: { padding: 50, maxWidth: 800, margin: "auto" },
+  button: { display: "flex", marginLeft: "auto"}
 };
 
 ReactDOM.render(<App />, document.getElementById("react-root"));
