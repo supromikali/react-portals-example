@@ -1,24 +1,16 @@
-import React from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
-class Portal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.mount = document.getElementById("portal-root");
-    this.el = document.createElement("div");
-  }
+const Portal = ({children}) => {
+  const mount = document.getElementById("portal-root");
+  const el = document.createElement("div");
 
-  componentDidMount() {
-    this.mount.appendChild(this.el);
-  }
+  useEffect(() => {
+    mount.appendChild(el);
+    return () => mount.removeChild(el);
+  }, [el, mount]);
 
-  componentWillUnmount() {
-    this.mount.removeChild(this.el);
-  }
-
-  render() {
-    return createPortal(this.props.children, this.el);
-  }
-}
+  return createPortal(children, el)
+};
 
 export default Portal;
