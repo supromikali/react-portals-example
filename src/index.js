@@ -14,7 +14,8 @@ const App = () => {
 
   return (
     <Card style={{ ...styles.card, overflow: "hidden" }}>
-      <Button
+        <Image/>
+        <Button
         onClick={e => {
           const rect = e.target.getBoundingClientRect();
           setCoords({
@@ -35,13 +36,12 @@ const App = () => {
           </TooltipPopover>
         </Portal>
       )}
-      <Image/>
     </Card>
   );
 };
 
 const styles = {
-    card: { padding: 50, margin: "100px 50px" }
+    card: { padding: 50 }
 };
 
 ReactDOM.render(<App />, document.getElementById("react-root"));
