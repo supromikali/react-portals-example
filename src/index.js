@@ -42,7 +42,7 @@ const App = () => {
 };
 
 const styles = {
-  card: { padding: 50, maxWidth: 800, margin: "auto" },
+  card: { padding: 50, maxWidth: 800, margin: "0 auto 300px" },
   button: { display: "flex", marginLeft: "auto"}
 };
 
