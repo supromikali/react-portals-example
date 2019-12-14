@@ -5,5 +5,8 @@ html {
 
 body {
     position: relative;
-    padding: 100px 50px;
+}
+
+#react-root {
+    padding-top: 100px;
 }

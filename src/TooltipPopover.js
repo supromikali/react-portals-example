@@ -21,7 +21,7 @@ const styles = {
   popover: {
     position: "absolute",
     width: 200,
-    transform: "translate(-50%, -100%)"
+    transform: "translate(-100px, -100%)"
   }
 };
 
