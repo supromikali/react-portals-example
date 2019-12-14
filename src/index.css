@@ -1,6 +1,5 @@
 html {
     overflow-x: hidden;
-    margin-right: calc(-1 * (100vw - 100%) + 100px);
     width: 100vw;
 }
 
