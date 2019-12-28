@@ -1,4 +1,7 @@
-# react-portals-example
+# Learn React Portals by example
+Full text of my article about using React Portals on example is published [here](https://blog.logrocket.com/learn-react-portals-by-example/)
+
+# Sort description
 An example of createPortal usage in React app by solving the common `overflow:hidden` issue.
 
 Before (some part of the tooltip is cut off):
